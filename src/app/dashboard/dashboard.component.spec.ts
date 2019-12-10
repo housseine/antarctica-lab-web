@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashboardComponent } from './dashboard.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { AppGameSearchComponent } from '../app-game-search/app-game-search.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
@@ -8,7 +12,12 @@ describe('DashboardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
+      imports: [
+        FormsModule,
+        RouterModule.forRoot([]),
+        HttpClientModule
+      ],
+      declarations: [ DashboardComponent,AppGameSearchComponent ]
     })
     .compileComponents();
   }));
