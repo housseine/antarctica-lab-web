@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GameDetailsComponent } from './game-details.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('GameDetailsComponent', () => {
   let component: GameDetailsComponent;
@@ -8,9 +11,10 @@ describe('GameDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GameDetailsComponent ]
+      imports: [FormsModule,RouterModule.forRoot([]),HttpClientModule],
+      declarations: [GameDetailsComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
