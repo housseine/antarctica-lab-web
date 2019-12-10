@@ -9,6 +9,9 @@ import { AppRoutingModule } from './app-routing.module'
 import { HttpClientModule } from '@angular/common/http'
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppGameSearchComponent } from './app-game-search/app-game-search.component';
+import { GameCardComponent } from './game-card/game-card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -17,13 +20,16 @@ import { AppGameSearchComponent } from './app-game-search/app-game-search.compon
     GameDetailsComponent,
     MessageComponent,
     DashboardComponent,
-    AppGameSearchComponent
+    AppGameSearchComponent,
+    GameCardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
