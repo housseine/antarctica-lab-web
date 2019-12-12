@@ -1,30 +1,46 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <button mat-icon-button>
-        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
-      </button>
-      <h1>SimpleCRM</h1>
-      <span class="menu-spacer"></span>
-      <div>
-        <a mat-button [routerLink]="'/accounts'"> Accounts </a>
-        <a mat-button [routerLink]="'/create-account'"> Create Account </a>
-        <a mat-button [routerLink]="'/contacts'"> Contacts </a>
-        <a mat-button [routerLink]="'/create-contact'"> Create Contact </a>
-        <a mat-button [routerLink]="'/activities'"> Activities </a>
-        <a mat-button [routerLink]="'/create-activity'"> Create Activity </a>
-  
-      </div>
-    </mat-toolbar-row>
-  
-    <mat-toolbar-row>
-        <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>
-      </mat-toolbar-row>
-  </mat-toolbar>
-<h1>{{title}}</h1>
-<nav>
-    <a routerLink="/games">Games</a> 
-    <a routerLink="/dashboard">Dashboard</a>
-</nav>
-<router-outlet></router-outlet>
-<app-message></app-message>
-<app-game-card></app-game-card>
+<div>
+    <mat-toolbar color="primary">
+        <div fxShow="true" fxHide.gt-sm="true">
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+
+        <a mat-button class="companyName" routerLink="/">
+            <span>Site name</span>
+        </a>
+        <span class="example-spacer"></span>
+        <div fxShow="true" fxHide.lt-md="true">
+            <a mat-button routerLink="/about-us">About us</a>
+            <a mat-button routerLink="/prices">Prices</a>
+            <a mat-button routerLink="/start-page">Start page</a>
+            <a mat-button routerLink="/offer">Offer</a>
+            <a mat-button routerLink="/contact">Contact</a>
+        </div>
+
+    </mat-toolbar>
+    <mat-sidenav-container fxFlexFill class="example-container">
+
+        <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
+            <div fxLayout="column">
+                <a mat-button routerLink="/about-us">About us</a>
+                <a mat-button routerLink="/prices">Prices</a>
+                <a mat-button routerLink="/start-page">Start page</a>
+                <a mat-button routerLink="/offer">Offer</a>
+                <a mat-button routerLink="/contact">Contact</a>
+            </div>
+        </mat-sidenav>
+        <mat-sidenav-content fxFlexFill>
+            <h1>{{title}}</h1>
+            <nav>
+                <a routerLink="/games">Games</a>
+                <a routerLink="/dashboard">Dashboard</a>
+            </nav>
+            <router-outlet></router-outlet>
+            <app-message></app-message>
+            <app-game-card></app-game-card>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+
+</div>
