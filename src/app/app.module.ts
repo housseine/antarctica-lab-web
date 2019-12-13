@@ -16,7 +16,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatSidenavModule} from '@angular/material/'
+import {MatSidenavModule} from '@angular/material/';
+import { ReactionComponent } from './reaction/reaction.component'
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {MatSidenavModule} from '@angular/material/'
     MessageComponent,
     DashboardComponent,
     AppGameSearchComponent,
-    GameCardComponent
+    GameCardComponent,
+    ReactionComponent
   ],
   imports: [
     BrowserModule,

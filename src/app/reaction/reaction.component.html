@@ -1,0 +1,25 @@
+<div class="wrapper" (mouseenter)="toggleShow(true)" (mouseleave)="toggleShow(false)">
+    <!-- <div class="emojis">
+
+        <span *ngFor="let emoji of emojiList; index as i;">
+            <img [src]="assets/images/reactions/like.svg" width='75px' (click)="react(i)">
+        </span>
+
+    </div>
+
+    <span class="like" (click)="react(0)" [class.liked]="userReaction != null">
+        Like
+    </span>
+
+    <span >
+        | You reacted <strong>{{ emojiList[userReaction] }}</strong>
+    </span> -->
+
+    <div class="reactions">
+        <div *ngFor="let emoji of emojiList" >
+            <span>
+                <img [src]="emojiPath(emoji)">
+            </span>
+        </div>
+    </div>
+</div>
