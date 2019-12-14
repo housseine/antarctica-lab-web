@@ -15,10 +15,10 @@ cache:
   - ./node_modules
 
 script:
-   - npm run test --watch=false --no-progress --browsers=ChromeHeadless
+ - ng test --watch=false --browsers=ChromeHeadless
 
 install:
-  - npm install
+ - npm install
  # - npm install -g firebase-tools
 
 after_success:
