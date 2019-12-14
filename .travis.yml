@@ -1,25 +1,25 @@
-dist: trusty
-language: node_js
-node_js:
- - "13.1.0"
+# dist: trusty
+# language: node_js
+# node_js:
+#  - "13.1.0"
 
-addons:
- apt:
-  sources:
-   - google-chrome
-  package:
-   - google-chrome-stable
+# addons:
+#  apt:
+#   sources:
+#    - google-chrome
+#   package:
+#    - google-chrome-stable
 
-cache:
- directories:
-  - ./node_modules
+# cache:
+#  directories:
+#   - ./node_modules
 
-script:
-   - npm run test
+# script:
+#    - npm run test
 
-install:
-  - npm install
-  - npm install -g firebase-tools
+# install:
+#   - npm install
+#   - npm install -g firebase-tools
 
-after_success:
-  - firebase deploy --token $FIREBASE_TOKEN
+# after_success:
+#   - firebase deploy --token $FIREBASE_TOKEN
