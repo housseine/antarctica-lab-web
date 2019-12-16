@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../games/game';
 import { GameService } from '../game.service';
+declare var $: any;
+declare const bubbles: any;
+declare var callBubller: any;
 
 @Component({
   selector: 'app-game-card',
@@ -13,6 +16,9 @@ export class GameCardComponent implements OnInit {
 
   ngOnInit() {
     this.getGame();
+    //
+    
+    
   }
 
   getGame():void{

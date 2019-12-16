@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <mat-card *ngFor="let game of games" class="example-card">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image" [style.backgroundImage]="'url(assets/images/users/user'+game.id+'.png)'">
@@ -17,4 +17,8 @@
       <button mat-button>SHARE</button>
     </mat-card-actions>
   </mat-card>
+</div> -->
+
+<div id="bubbleContainer">
+    <div class="bubble" *ngFor="let game of games"> <p>{{game.name}}</p> </div> 
 </div>
