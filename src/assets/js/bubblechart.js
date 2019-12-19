@@ -96,10 +96,6 @@ function mapEntries(json, realrowlength, skip){
   
   
   
-  (function() {
-   render();
-  
-  })();
   
   //
   // Render the data
