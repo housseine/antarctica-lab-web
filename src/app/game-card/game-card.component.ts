@@ -66,19 +66,20 @@ export class GameCardComponent implements OnInit {
       .style("fill", function (d) {
         return color(d.data.value);
       });
-
+      var images = node.append("svg:image")
+      .attr("xlink:href",  function(d) { return "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_spiderman.png";})
+      .attr("x", function(d) { return -d.r;})
+      .attr("y", function(d) { return -d.r;})
+      .attr("height",function (d) { return d.r*2; })
+      .attr("width",function (d) { return d.r*2; });
+      
       node.append("text")
       .on("click", function (d) {router.navigate(['details/'+d.data.id]) })
       .attr("dy", ".3em")
       .style("text-anchor", "middle")
       .text(function (d) { return d.data.className.substring(0, d.r / 3); });
 
-    // node.append("a")
-    //   .attr("href", "/details/3")
-    //   .attr("dy", ".3em")
-    //   .style("text-anchor", "middle")
-    //   .text(function (d) { return d.data.className.substring(0, d.r / 3); });
-
+ 
     // Returns a flattened hierarchy containing all leaf nodes under the root.
     function classes(root) {
       var classes = [];
