@@ -1,23 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppGameSearchComponent } from './app-game-search.component';
+import { AppCollaborateurSearchComponent } from './app-collaborateur-search.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-describe('AppGameSearchComponent', () => {
-  let component: AppGameSearchComponent;
-  let fixture: ComponentFixture<AppGameSearchComponent>;
+describe('AppcollaborateurSearchComponent', () => {
+  let component: AppCollaborateurSearchComponent;
+  let fixture: ComponentFixture<AppCollaborateurSearchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppGameSearchComponent ],
+      declarations: [ AppCollaborateurSearchComponent ],
       imports: [RouterModule,HttpClientModule]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AppGameSearchComponent);
+    fixture = TestBed.createComponent(AppCollaborateurSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,24 +1,24 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GamesComponent } from './games.component';
+import { CollaborateurComponent } from './collaborateurs.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-describe('GamesComponent', () => {
-  let component: GamesComponent;
-  let fixture: ComponentFixture<GamesComponent>;
+describe('collaborateursComponent', () => {
+  let component: CollaborateurComponent;
+  let fixture: ComponentFixture<CollaborateurComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [FormsModule,RouterModule,HttpClientModule],
-      declarations: [ GamesComponent ]
+      declarations: [ CollaborateurComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GamesComponent);
+    fixture = TestBed.createComponent(CollaborateurComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

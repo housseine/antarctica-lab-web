@@ -1,0 +1,14 @@
+<div>
+    <h4>
+        <label>collaborateur Search</label>
+    </h4>
+    <input #searchBox (input)="search(searchBox.value)">
+</div>
+<ul>
+    <!-- The $ is a convention that indicates collaborateurs$ is an Observable, not an array. -->
+    <li *ngFor="let collaborateur of collaborateurs$ | async">
+        <a routerLink="/detail/{{collaborateur.id}}">
+            {{collaborateur.name}}
+        </a>
+    </li>
+</ul>

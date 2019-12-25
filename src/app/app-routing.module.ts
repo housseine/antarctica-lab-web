@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import {RouterModule,Routes} from '@angular/router'
-import { GamesComponent } from './games/games.component';
+import { CollaborateurComponent } from './collaborateurs/collaborateurs.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { GameDetailsComponent } from './game-details/game-details.component';
-import { GameCardComponent } from './game-card/game-card.component';
+import { CollaborateurDetailsComponent } from './collaborateur-details/collaborateur-details.component';
+import { CollaborateurCardComponent } from './collaborateur-card/collaborateur-card.component';
 
 const routes:Routes=[
-  {path:'games',component:GamesComponent},
+  {path:'collaborateurs',component:CollaborateurComponent},
   {path:'dashboard',component:DashboardComponent},
-  {path:'trombinogame',component:GameCardComponent},
-  {path:'details/:id',component:GameDetailsComponent},
+  {path:'trombinoscope',component:CollaborateurCardComponent},
+  {path:'details/:id',component:CollaborateurDetailsComponent},
   {path:'',redirectTo:'/dashboard',pathMatch:'full'},
 
 ];

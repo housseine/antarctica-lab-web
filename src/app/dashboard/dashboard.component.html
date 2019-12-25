@@ -1,9 +1,9 @@
-<h3>Top Games</h3>
+<h3>Top collaborateurs</h3>
 <div>
-    <a *ngFor="let game of games" routerLink="/details/{{game.id}}">
+    <a *ngFor="let collaborateur of collaborateurs" routerLink="/details/{{collaborateur.id}}">
         <div>
-            <h4>{{game.name}}</h4>
+            <h4>{{collaborateur.name}}</h4>
         </div>
     </a>
 </div>
-<app-game-search></app-game-search>
+<app-collaborateur-search></app-collaborateur-search>

@@ -1,0 +1,9 @@
+<div>
+  <h4>
+      <label>collaborateur Search</label>
+  </h4>
+  <input #searchBox (input)="search(searchBox.value)">
+</div>
+<div class="container">
+    <div *ngFor="let collaborateur of collaborateurs"> <p>{{collaborateur.name}}</p> </div>
+</div>

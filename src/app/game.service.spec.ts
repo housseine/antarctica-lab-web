@@ -1,15 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GameService } from './game.service';
+import { CollaborateurService } from './collaborateur.service';
 import { HttpClientModule } from '@angular/common/http';
 
-describe('GameService', () => {
+describe('collaborateurService', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [HttpClientModule],
   }));
 
   it('should be created', () => {
-    const service: GameService = TestBed.get(GameService);
+    const service: CollaborateurService = TestBed.get(CollaborateurService);
     expect(service).toBeTruthy();
   });
 });

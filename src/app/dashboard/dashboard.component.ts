@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GameService } from '../game.service';
-import { Game } from '../games/game';
+import { CollaborateurService } from '../collaborateur.service';
+import { Collaborateur } from '../collaborateurs/collaborateur';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,15 +8,14 @@ import { Game } from '../games/game';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  games: Game[];
-  constructor(private gameService: GameService) { }
+  collaborateurs: Collaborateur[];
+  constructor(private collaborateurService: CollaborateurService) { }
 
   ngOnInit() {
-   this.getGames();
+   this.getCollaborateur();
   }
-  getGames(): void {
-    this.gameService.getGames().subscribe(games => this.games = games.slice(0, 5));
-    console.log("all games: "+this.games);
+  getCollaborateur(): void {
+    this.collaborateurService.getCollaborateurs().subscribe(collaborateurs => this.collaborateurs = collaborateurs.slice(0, 5));
   }
 
 }

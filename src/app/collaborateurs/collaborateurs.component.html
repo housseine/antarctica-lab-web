@@ -1,0 +1,33 @@
+<h2>Liste des collaborateur</h2>
+<ul class="collaborateurs">
+    <li *ngFor="let collaborateur of collaborateurs">
+        <a routerLink="/details/{{collaborateur.id}}">
+            <span>{{collaborateur.id}} </span>{{collaborateur.name}}
+        </a>
+        <button (click)="deleteCollaborateur(collaborateur)">
+            x
+        </button>
+    </li>
+</ul>
+<div>
+    <label>
+         name:
+        <input #collaborateurName />
+    </label><br>
+    <label>
+         description:
+        <input #collaborateurDescription />
+    </label><br>
+    <label>
+         comment:
+        <input #collaborateurComment />
+    </label><br>
+    <label>
+         rate:
+        <input #collaborateurRate type="number" />
+    </label><br>
+    <button
+        (click)="addCollaborateur(collaborateurName.value,collaborateurDescription.value,collaborateurComment.value,collaborateurRate.value);collaborateurName.value='';collaborateurComment.value='';collaborateurDescription.value='';collaborateurRate.value=0;">
+        Save
+    </button>
+</div>
