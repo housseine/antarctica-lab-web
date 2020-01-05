@@ -12,6 +12,8 @@ import { AppGameSearchComponent } from './app-game-search/app-game-search.compon
 import { GameCardComponent } from './game-card/game-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
+import{ MatToolbarModule, MatSidenavModule, MatListModule, MatIconModule, MatButtonModule } from '@angular/material';
+import {FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,15 @@ import {MatCardModule} from '@angular/material/card';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
