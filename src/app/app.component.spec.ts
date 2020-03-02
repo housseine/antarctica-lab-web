@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MessageComponent } from './message/message.component';
 import { GameCardComponent } from './game-card/game-card.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule, MatToolbarRow, MatToolbar, MatToolbarModule, MatSidenavModule, MatListModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -14,10 +16,17 @@ describe('AppComponent', () => {
         FormsModule,
         RouterModule.forRoot([]),
         HttpClientModule,
-        MatCardModule
+        MatCardModule,
+        MatIconModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        MatListModule,
+        BrowserAnimationsModule
+        
+        
       ],
       declarations: [
-        AppComponent,MessageComponent,GameCardComponent
+        AppComponent,MessageComponent,GameCardComponent,
       ],
     }).compileComponents();
   }));
@@ -28,10 +37,5 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'antarctica-lab-web'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Game lab of Antarctica');
-  });
 
 });
