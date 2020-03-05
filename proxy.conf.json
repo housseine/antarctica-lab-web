@@ -1,6 +1,6 @@
 {
     "/api": {
-        "target": "https://antarctica-lab.herokuapp.com/",
+        "target": "https://antarcticaqcdsc-lab.herokuapp.com/",
         "secure": false,
         "logLevel": "debug",
         "changeOrigin": true,
