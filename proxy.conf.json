@@ -1,6 +1,6 @@
 {
     "/api": {
-        "target": "https://antarctica-lab.herokuapp.com/",
+        "target": "151.101.1.195:443",
         "secure": false,
         "logLevel": "debug",
         "changeOrigin": true,
