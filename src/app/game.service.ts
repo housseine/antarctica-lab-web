@@ -22,7 +22,7 @@ export class GameService {
   ) {
   }
   getGames(): Observable<Game[]> {
-    return this.http.get<Game[]>("https://antarctica-lab.herokuapp.com/games/getall").pipe(
+    return this.http.get<Game[]>(this.gameUrl + '/getall').pipe(
       tap(_ => this.log('fetched games')),
       retry(1),
       catchError(this.handleErrors)
