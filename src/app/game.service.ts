@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Game } from './games/game';
 import { GAMES } from './games/games-mock';
-import { Observable, of } from 'rxjs'
+import { Observable, of, throwError } from 'rxjs'
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { catchError, map, tap } from 'rxjs/operators'
+import { catchError, map, tap, retry } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +24,8 @@ export class GameService {
   getGames(): Observable<Game[]> {
     return this.http.get<Game[]>(this.gameUrl + '/getall').pipe(
       tap(_ => this.log('fetched games')),
-      catchError(this.handleError<Game[]>('getGames', []))
+      retry(1),
+      catchError(this.handleErrors)
     );
   }
   getGameById(id: number): Observable<Game> {
@@ -77,4 +78,17 @@ export class GameService {
       return of(result as T);
     }
   };
+
+  handleErrors(error) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      // client-side error
+      errorMessage = `Error: ${error.error.message}`;
+    } else {
+      // server-side error
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    window.alert(errorMessage);
+    return throwError(errorMessage);
+  }
 }
