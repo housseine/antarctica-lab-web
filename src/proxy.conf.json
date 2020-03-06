@@ -5,10 +5,6 @@
         "logLevel": "debug",
         "changeOrigin": true,
         "pathRewrite": {"^/api" : ""}
-    },
+    }
 
-    "rewrites": [ {
-        "source": "**",
-        "destination": "/index.html"
-      } ]
 }
