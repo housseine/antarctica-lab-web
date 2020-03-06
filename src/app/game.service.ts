@@ -88,7 +88,7 @@ export class GameService {
       // server-side error
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    window.alert(errorMessage);
+    console.log(errorMessage);
     return throwError(errorMessage);
   }
 }
