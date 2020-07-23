@@ -1,0 +1,9 @@
+.login-container{
+    border: 1px solid red;
+}
+.login-content{
+    border: 1px solid blue;
+    margin: auto;
+    max-width: 500px;
+    text-align: center;
+}

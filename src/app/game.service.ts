@@ -11,7 +11,7 @@ import { catchError, map, tap, retry } from 'rxjs/operators'
 })
 export class GameService {
 
-  private gameUrl = 'https://antarctica-lab.herokuapp.com/games';
+  private gameUrl = '/api/games';
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
