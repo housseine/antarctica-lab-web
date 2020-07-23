@@ -1,0 +1,35 @@
+<div class="login-container" >
+    <div class="login-content">
+        <h1 className="login-title">LOGIN TO SHOUTFIT</h1>
+        <div className="social-login">
+            <a className="btn btn-block social-btn google" href="https://antarctica-lab.herokuapp.com/oauth2/authorize/google?redirect_uri=http://localhost:4200/oauth2/redirect">
+                <mat-icon style="width: 50px; height:30px"
+              svgIcon="logoGoogle"></mat-icon> Login With Google</a><br>
+            <a className="btn btn-block social-btn facebook" href="https://antarctica-lab.herokuapp.com/oauth2/authorize/google?redirect_uri=http://localhost:4200/oauth2/redirect">
+                <mat-icon style="width: 50px; height:30px"
+                svgIcon="logoFacebook"></mat-icon> Log in with Facebook</a><br>
+            <a className="btn btn-block social-btn github" href="https://antarctica-lab.herokuapp.com/oauth2/authorize/google?redirect_uri=http://localhost:4200/oauth2/redirect">
+                <mat-icon style="width: 50px; height:30px"
+                svgIcon="logoGithub"></mat-icon> Log in with Github</a><br>
+            
+        </div>
+        <div className="or-separator">
+            <span className="or-text">OR</span>
+        </div>
+        <div>
+            <label>
+                Email:
+                <input #email />
+            </label><br>
+            <label>
+                Password:
+                <input #password />
+            </label><br>
+            <button
+                (click)="login(email.value,password.value);">
+                login
+            </button>
+        </div>
+        <!-- <span className="signup-link">New user? <Link to="/signup">Sign up!</Link></span> -->
+    </div>
+</div>

@@ -14,6 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import{ MatToolbarModule, MatSidenavModule, MatListModule, MatIconModule, MatButtonModule } from '@angular/material';
 import {FlexLayoutModule } from '@angular/flex-layout';
+import { SocialLoginComponent } from './social-login/social-login.component';
+import { LoginComponent } from './authentication/login/login.component';
+import { OAuth2RedirectHandlerComponent } from './authentication/oAuth2RedirectHandler/oauth2-redirect-handler/oauth2-redirect-handler.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import {FlexLayoutModule } from '@angular/flex-layout';
     MessageComponent,
     DashboardComponent,
     AppGameSearchComponent,
-    GameCardComponent
+    GameCardComponent,
+    SocialLoginComponent,
+    LoginComponent,
+    OAuth2RedirectHandlerComponent
   ],
   imports: [
     BrowserModule,
