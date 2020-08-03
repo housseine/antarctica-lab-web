@@ -1,9 +1,35 @@
 .login-container{
-    border: 1px solid red;
 }
 .login-content{
-    border: 1px solid blue;
     margin: auto;
     max-width: 500px;
     text-align: center;
+    background-color: #F5F5F5;
+}
+.social-login{
+    width: -webkit-fill-available;
+    text-align: left;
+
+}
+.social-login-container{
+    max-width: 200px;
+    margin: auto;
+}
+
+mat-form-field{
+    width: -webkit-fill-available;
+}
+.form-registration{
+    max-width: 300px;
+    margin: auto;
+}
+.button-social-login{
+    width: -webkit-fill-available;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+.button-social-login:hover{
+    background-color: rgb(39, 38, 38);
 }
