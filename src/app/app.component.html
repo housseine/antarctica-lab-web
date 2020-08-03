@@ -1,6 +1,6 @@
 <div>
   <app-social-login></app-social-login>
-    <mat-toolbar color="primary">
+    <mat-toolbar >
       <mat-toolbar-row>
         <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
           <mat-icon>menu</mat-icon>
@@ -30,7 +30,7 @@
 
       </mat-sidenav>
       <mat-sidenav-content fxFlexFill>
- <app-login></app-login>
+
         <router-outlet></router-outlet>
 
       </mat-sidenav-content>

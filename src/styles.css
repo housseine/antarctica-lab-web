@@ -1,4 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'GillSansStd';
+  src: url('assets/fonts/GillSansStd.otf'); 
+}
+
+@font-face {
+  font-family: 'GillSansStd-Bold';
+  src: url('assets/fonts/GillSansStd-Bold.otf'); 
+}
+
+@font-face {
+  font-family: 'GillSansStd-Light';
+  src: url('assets/fonts/GillSansStd-Light.otf'); 
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -6,7 +20,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 body {
     margin: 2em;
     background-image:url("assets/img/general/bg-antarctica2.jpg") ;
+
+  }
+  *{
+    font-family: 'GillSansStd';
+
   }
   .material-icons {
     font-family:'Material Icons'!important;
   }
+.title{
+font-family: 'GillSansStd-Light';
+}

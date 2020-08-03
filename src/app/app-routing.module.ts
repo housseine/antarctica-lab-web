@@ -5,13 +5,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { GameDetailsComponent } from './game-details/game-details.component';
 import { GameCardComponent } from './game-card/game-card.component';
 import { OAuth2RedirectHandlerComponent } from './authentication/oAuth2RedirectHandler/oauth2-redirect-handler/oauth2-redirect-handler.component';
+import { LoginRequest } from './authentication/login/loginRequest';
+import { AuthGuardService } from './common/services/auth-guard.service';
+import { LoginComponent } from './authentication/login/login.component';
 
 const routes:Routes=[
   {path:'games',component:GamesComponent},
-  {path:'dashboard',component:DashboardComponent},
+  {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuardService]},
   {path:'details/:id',component:GameDetailsComponent},
   {path:'trombinogame',component:GameCardComponent},
   {path:'oauth2/redirect',component:OAuth2RedirectHandlerComponent},
+  {path:'login',component:LoginComponent},
   {path:'',redirectTo:'/dashboard',pathMatch:'full'},
 
 ];
