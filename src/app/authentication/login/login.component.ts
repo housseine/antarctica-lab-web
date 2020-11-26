@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
       password: password
     }
     this.loginService.login(loginRequest).subscribe(authResponse => { this.localStorage.setItem("accessToken", authResponse.accessToken) });
+    this.loginService.loginToGoogle().subscribe(access=>{console.log("my access: "+access)});
   }
 
 }

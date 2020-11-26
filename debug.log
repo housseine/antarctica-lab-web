@@ -1,2 +1,6 @@
 [0716/204213.612:ERROR:file_io.cc(89)] ReadExactly: expected 36, observed 0
 [0716/213956.568:ERROR:file_io.cc(89)] ReadExactly: expected 36, observed 0
+[1031/155400.127:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+[1108/131344.207:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+[1121/114500.944:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+[1121/210102.735:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)

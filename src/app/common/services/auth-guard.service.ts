@@ -7,13 +7,15 @@ import { variable } from '@angular/compiler/src/output/output_ast';
 })
 export class AuthGuardService implements CanActivate {
   localStorage: Storage;
+  sessionStorage: Storage;
   routeURL: string;
   constructor(private router: Router) {
     this.localStorage = window.localStorage;
+    this.sessionStorage=window.sessionStorage;
   }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     var token: string;
-    token = this.localStorage.getItem("accessToken");
+    token = this.sessionStorage.getItem("acc");
     console.log("le token"+token)
     if (!token && this.routeURL !== '/login') {
       console.log("im in");
