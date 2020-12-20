@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  ENDPOINT_ROOT_URL: "https://antarctica-lab.herokuapp.com"
+  
 };

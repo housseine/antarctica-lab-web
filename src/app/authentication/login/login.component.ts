@@ -5,6 +5,7 @@ import { LoginRequest } from './loginRequest';
 import { LoginService } from './login.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material';
+import { environment } from 'src/environments/environment';
 const googleLogoURL =
   "https://raw.githubusercontent.com/fireflysemantics/logo/master/Google.svg";
 @Component({
@@ -16,7 +17,7 @@ const googleLogoURL =
 export class LoginComponent implements OnInit {
   authenticated: any;
   localStorage: Storage;
-  googleUrl="http://localhost:8080/oauth2/authorize/google?redirect_uri=http://localhost:4200/oauth2/redirect";
+  googleAuthUrl=environment.ENDPOINT_ROOT_URL+"/oauth2/authorize/google?redirect_uri=http://localhost:4200/oauth2/redirect";
   constructor(private location: Location, private loginService: LoginService, private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer) {
     this.localStorage = window.localStorage;
