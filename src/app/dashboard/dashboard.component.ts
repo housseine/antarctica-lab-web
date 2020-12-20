@@ -14,9 +14,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
    this.getGames();
-   var token: any;
-   token = this.route.root.firstChild.snapshot.data;
-   console.log("my token: "+token);
+  //  var token: any;
+  //  token = this.route.root.firstChild.snapshot.data;
+  //  console.log("my token: "+token);
   }
   
   getGames(): void {

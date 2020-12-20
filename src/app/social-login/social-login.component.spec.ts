@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {  MatIconModule } from '@angular/material';
 
 import { SocialLoginComponent } from './social-login.component';
+
 
 describe('SocialLoginComponent', () => {
   let component: SocialLoginComponent;
@@ -8,6 +10,9 @@ describe('SocialLoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+              MatIconModule, 
+    ],
       declarations: [ SocialLoginComponent ]
     })
     .compileComponents();
