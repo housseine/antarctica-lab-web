@@ -16,6 +16,7 @@ const googleLogoURL =
 export class LoginComponent implements OnInit {
   authenticated: any;
   localStorage: Storage;
+  googleUrl="http://localhost:8080/oauth2/authorize/google?redirect_uri=http://localhost:4200/oauth2/redirect";
   constructor(private location: Location, private loginService: LoginService, private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer) {
     this.localStorage = window.localStorage;
@@ -23,8 +24,9 @@ export class LoginComponent implements OnInit {
     this.matIconRegistry.addSvgIcon("logoFacebook",this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/img/general/Facebook.svg"));
     this.matIconRegistry.addSvgIcon("logoGithub",this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/img/general/Github.svg"));
   }
-
+   
   ngOnInit() {
+    
 
   }
 

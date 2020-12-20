@@ -3,11 +3,11 @@
         <h1 class="title" className="login-title">SIGN IN</h1>
         <div class="social-login-container ">
             <a class="social-login" mat-button
-                href="http://localhost:8080/oauth2/authorize/google?redirect_uri=http://localhost:4200/oauth2/redirect">
+            [href]="googleUrl">
                 <mat-icon style="width: 20px; height:30px" svgIcon="logoGoogle"></mat-icon> LOGIN WITH GOOGLE
             </a><br>
             <a class="social-login" mat-button
-                href="https://antarctica-lab.herokuapp.com/oauth2/authorize/google?redirect_uri=http://localhost:4200/oauth2/redirect">
+            [href]="myVar">
                 <mat-icon style="width: 20px; height:30px" svgIcon="logoFacebook"></mat-icon> LOGIN WITH FACEBOOK
             </a><br>
             <a class="social-login" mat-button
