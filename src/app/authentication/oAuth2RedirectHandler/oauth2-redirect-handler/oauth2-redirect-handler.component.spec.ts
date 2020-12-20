@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
 
 import { OAuth2RedirectHandlerComponent } from './oauth2-redirect-handler.component';
 
@@ -8,9 +10,13 @@ describe('OAuth2RedirectHandlerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OAuth2RedirectHandlerComponent ]
+      imports: [
+        RouterModule.forRoot([]),
+        HttpClientModule,
+      ],
+      declarations: [OAuth2RedirectHandlerComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

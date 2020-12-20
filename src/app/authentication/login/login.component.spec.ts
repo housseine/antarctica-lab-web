@@ -1,4 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatFormFieldModule, MatIconModule, MatInputModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LoginComponent } from './login.component';
 
@@ -8,6 +11,13 @@ describe('LoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        HttpClientModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatInputModule,
+        BrowserAnimationsModule,
+],
       declarations: [ LoginComponent ]
     })
     .compileComponents();

@@ -11,14 +11,14 @@ const googleLogoURL =
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 
 export class LoginComponent implements OnInit {
   authenticated: any;
   localStorage: Storage;
   googleAuthUrl=environment.ENDPOINT_ROOT_URL+"/oauth2/authorize/google?redirect_uri=http://localhost:4200/oauth2/redirect";
-  constructor(private location: Location, private loginService: LoginService, private matIconRegistry: MatIconRegistry,
+  constructor( private loginService: LoginService, private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer) {
     this.localStorage = window.localStorage;
     this.matIconRegistry.addSvgIcon("logoGoogle", this.domSanitizer.bypassSecurityTrustResourceUrl("/assets/img/general/Google.svg"));

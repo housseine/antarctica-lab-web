@@ -8,6 +8,7 @@ import { GameCardComponent } from './game-card/game-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule, MatToolbarRow, MatToolbar, MatToolbarModule, MatSidenavModule, MatListModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {SocialLoginComponent} from './social-login/social-login.component'
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -26,7 +27,7 @@ describe('AppComponent', () => {
         
       ],
       declarations: [
-        AppComponent,MessageComponent,GameCardComponent,
+        AppComponent,MessageComponent,GameCardComponent,SocialLoginComponent
       ],
     }).compileComponents();
   }));
