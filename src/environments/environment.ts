@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  ENDPOINT_ROOT_URL: "https//localhost:8080"
+  ENDPOINT_ROOT_URL: false? "/" :"localhost:8080"
 };
 
 /*
