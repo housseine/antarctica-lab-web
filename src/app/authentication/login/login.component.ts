@@ -17,7 +17,7 @@ const googleLogoURL =
 export class LoginComponent implements OnInit {
   authenticated: any;
   localStorage: Storage;
-  googleAuthUrl=environment.ENDPOINT_ROOT_URL+"/oauth2/authorize/google?redirect_uri=http://localhost:4200/oauth2/redirect";
+  googleAuthUrl=environment.ENDPOINT_ROOT_URL+"/oauth2/authorize/google?redirect_uri="+environment.BASE_URL+"/oauth2/redirect";
   constructor( private loginService: LoginService, private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer) {
     this.localStorage = window.localStorage;
