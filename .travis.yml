@@ -16,10 +16,11 @@ cache:
 
 script:
  - ng test --watch=false --browsers=ChromeHeadless
+ - ng build-prod
 
 install:
  - npm install
- - npm run build --prod
+ #- npm run build --prod
  - npm install -g firebase-tools
 
 after_success:
