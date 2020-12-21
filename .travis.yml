@@ -19,7 +19,7 @@ script:
 
 install:
  - npm install
- - npm run build
+ - npm run build --prod
  - npm install -g firebase-tools
 
 after_success:

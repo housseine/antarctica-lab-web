@@ -52,7 +52,7 @@ import { OAuth2RedirectHandlerComponent } from './authentication/oAuth2RedirectH
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

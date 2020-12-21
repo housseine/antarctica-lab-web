@@ -1,5 +1,5 @@
 {
-    "/api": {
+    "/apiaa": {
         "target": "https://antarctica-lab.herokuapp.com",
         "secure": true,
         "logLevel": "debug",
