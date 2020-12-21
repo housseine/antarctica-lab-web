@@ -16,7 +16,7 @@ cache:
 
 script:
  - ng test --watch=false --browsers=ChromeHeadless
- - ng build-prod
+ - ng build --prod
 
 install:
  - npm install
