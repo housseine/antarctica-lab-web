@@ -1,7 +1,7 @@
 {
     "/api": {
         "target": "https://antarctica-lab.herokuapp.com",
-        "secure": true,
+        "secure": false,
         "logLevel": "debug",
         "pathRewrite": {"^/api" : ""},
         "changeOrigin": true
