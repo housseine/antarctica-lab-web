@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  ENDPOINT_ROOT_URL: false? "/" :"localhost:8080",
+  ENDPOINT_ROOT_URL: false? "/" :"http://localhost:8080",
   BASE_URL:"http://localhost:4200"
 };
 

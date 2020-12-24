@@ -5,16 +5,18 @@ import { Observable, of, throwError } from 'rxjs'
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { catchError, map, tap, retry } from 'rxjs/operators'
-
+import { environment } from 'src/environments/environment';
+const BASE_API_URL = environment.ENDPOINT_ROOT_URL
 @Injectable({
   providedIn: 'root'
 })
 export class GameService {
 
-  private gameUrl = '/api/games';
+  private gameUrl = BASE_API_URL + '/games';
 
   private httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    withCredentials: true
   };
   constructor(
     private messageService: MessageService,
@@ -22,48 +24,48 @@ export class GameService {
   ) {
   }
   getGames(): Observable<Game[]> {
-    return this.http.get<Game[]>(this.gameUrl + '/getall').pipe(
+    return this.http.get<Game[]>(this.gameUrl + '/getall',{withCredentials:true}).pipe(
       tap(_ => this.log('fetched games')),
       retry(1),
       catchError(this.handleErrors)
     );
   }
   getGameById(id: number): Observable<Game> {
-    return this.http.get<Game>(this.gameUrl+"/" + id).pipe(
+    return this.http.get<Game>(this.gameUrl + "/" + id).pipe(
       tap(_ => this.log(`GameService: fetched game ${id}`)),
       catchError(this.handleError<Game>(`getGameById id=${id}`))
     );
   }
 
   updateGame(game: Game): Observable<any> {
-    return this.http.patch<Game>(this.gameUrl+"/", game, this.httpOptions).pipe(
+    return this.http.patch<Game>(this.gameUrl + "/", game, {withCredentials:true,headers:new HttpHeaders({ 'Content-Type': 'application/json' })}).pipe(
       tap(_ => this.log(`Updated Game ${game.id}`)),
       catchError(this.handleError<any>('updateGame'))
     );
   }
 
   addGame(game: Game): Observable<Game> {
-    return this.http.post(this.gameUrl+"/", game, this.httpOptions).pipe(
+    return this.http.post(this.gameUrl + "/", game, this.httpOptions).pipe(
       tap((newGame: Game) => this.log(`Posted game ${newGame.id}`)),
       catchError(this.handleError<Game>('addGame'))
     );
   }
 
   deleteGame(game: Game): Observable<any> {
-    const url = this.gameUrl+"/" + game.id;
+    const url = this.gameUrl + "/" + game.id;
     return this.http.delete<Game>(url, this.httpOptions).pipe(
       tap(_ => this.log(`deleted game ${game.id}`)),
       catchError(this.handleError<Game>('deleteGame'))
     )
   }
 
-  searchGames(term:string):Observable<Game[]>{
-    if(!term.trim()){
+  searchGames(term: string): Observable<Game[]> {
+    if (!term.trim()) {
       return of([]);
     }
     return this.http.get<Game[]>(`${this.gameUrl}?term=${term}`).pipe(
       tap(_ => this.log(`found games matching "${term}"`)),
-      catchError(this.handleError<Game[]>('searchGames',[]))
+      catchError(this.handleError<Game[]>('searchGames', []))
     );
   }
 

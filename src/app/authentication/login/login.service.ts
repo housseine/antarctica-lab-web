@@ -6,17 +6,19 @@ import { tap, catchError, map } from 'rxjs/operators';
 import { MessageService } from 'src/app/message.service';
 import { AuthResponse } from './authResponse';
 import { TokenPayLoad } from './TokenPayLoad';
-
+import { environment } from 'src/environments/environment';
+const BASE_API_URL = environment.ENDPOINT_ROOT_URL
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  private loginUrl = '/api/auth/login';
-  private loginGoogleUrl = '/api/auth/logingoogle'
-  private sendTokenUrl = '/api/auth/sendToken'
+  private loginUrl = BASE_API_URL + '/auth/login';
+  private loginGoogleUrl = BASE_API_URL + '/auth/logingoogle'
+  private sendTokenUrl = BASE_API_URL + '/auth/sendToken'
 
   private httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    withCredentials: true
   };
 
   constructor(private http: HttpClient, private messageService: MessageService,) { }

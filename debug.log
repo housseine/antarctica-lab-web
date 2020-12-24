@@ -13,3 +13,7 @@
 [1221/130654.349:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin dâ€™accÃ¨s spÃ©cifiÃ© est introuvable. (0x3)
 
 [1223/212414.967:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+[1223/235035.221:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+[1224/000425.698:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+[1224/002108.760:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)
+[1224/113524.250:ERROR:directory_reader_win.cc(43)] FindFirstFile: Le chemin d’accès spécifié est introuvable. (0x3)

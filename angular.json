@@ -78,8 +78,7 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "antarctica-lab-web:build:production",
-              "proxyConfig": "proxy.conf-prod.json"
+              "browserTarget": "antarctica-lab-web:build:production"
             }
             
           }

@@ -8,6 +8,8 @@ import { MatIconRegistry } from '@angular/material';
 import { environment } from 'src/environments/environment';
 const googleLogoURL =
   "https://raw.githubusercontent.com/fireflysemantics/logo/master/Google.svg";
+  const ENDPOINT_ROOT_URL=environment.ENDPOINT_ROOT_URL;
+  const BASE_URL=environment.BASE_URL;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,7 +19,11 @@ const googleLogoURL =
 export class LoginComponent implements OnInit {
   authenticated: any;
   localStorage: Storage;
-  googleAuthUrl=environment.ENDPOINT_ROOT_URL+"/oauth2/authorize/google?redirect_uri="+environment.BASE_URL+"/oauth2/redirect";
+  googleAuthUrl=""+ENDPOINT_ROOT_URL+"/oauth2/authorize/google?redirect_uri="+BASE_URL+"/oauth2/redirect";
+
+
+  
+  
   constructor( private loginService: LoginService, private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer) {
     this.localStorage = window.localStorage;
@@ -28,7 +34,7 @@ export class LoginComponent implements OnInit {
    
   ngOnInit() {
     
-
+    console.log("url: "+this.googleAuthUrl);
   }
 
   login(email: string, password: string): void {
