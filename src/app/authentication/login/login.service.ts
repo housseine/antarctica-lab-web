@@ -31,7 +31,7 @@ export class LoginService {
   }
 
   sendToken(token: string): Observable<TokenPayLoad> {
-    return this.http.get<TokenPayLoad>(this.sendTokenUrl + "/" + token, this.httpOptions).pipe(
+    return this.http.get<TokenPayLoad>(`${this.sendTokenUrl}?token=${token}`, this.httpOptions).pipe(
       // map((response: any) => {
       //   response.body("helo");
       //   console.log("maaaaaap"+response);
