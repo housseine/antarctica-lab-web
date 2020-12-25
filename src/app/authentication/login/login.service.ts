@@ -17,7 +17,7 @@ export class LoginService {
   private sendTokenUrl = BASE_API_URL + '/auth/sendToken'
 
   private httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    headers: new HttpHeaders({ 'Content-Type': 'application/json','Access-Control-Allow-Origin' :'*'}),
     withCredentials: true
   };
 
