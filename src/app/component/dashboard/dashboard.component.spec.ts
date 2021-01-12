@@ -4,7 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { AppGameSearchComponent } from '../app-game-search/app-game-search.component';
+import { AppGameSearchComponent } from '../games/app-game-search/app-game-search.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;

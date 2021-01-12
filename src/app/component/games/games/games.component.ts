@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from './game';
 import { GAMES } from './games-mock'
-import { GameService } from '../game.service';
+import { GameService } from '../../../game.service';
 import { R3TargetBinder } from '@angular/compiler';
 
 

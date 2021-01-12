@@ -1,15 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { GamesComponent } from './games/games.component';
+import { GamesComponent } from './component/games/games/games.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { GameDetailsComponent } from './game-details/game-details.component';
+import { GameDetailsComponent } from './component/games/game-details/game-details.component';
 import { MessageComponent } from './message/message.component';
 import { AppRoutingModule } from './app-routing.module'
 import { HttpClientModule } from '@angular/common/http'
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { AppGameSearchComponent } from './app-game-search/app-game-search.component';
-import { GameCardComponent } from './game-card/game-card.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { AppGameSearchComponent } from './component/games/app-game-search/app-game-search.component';
+import { GameCardComponent } from './component/games/game-card/game-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import { MatToolbarModule, MatSidenavModule, MatListModule, MatIconModule, MatButtonModule,MatFormFieldModule, MatInputModule } from '@angular/material';

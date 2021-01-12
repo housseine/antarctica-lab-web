@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GameService } from '../game.service';
-import { Game } from '../games/game';
+import { GameService } from '../../game.service';
+import { Game } from '../games/games/game';
 
 @Component({
   selector: 'app-dashboard',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GameService } from '../game.service';
+import { GameService } from '../../../game.service';
 import { Game } from '../games/game';
 import * as d3 from 'd3';
 import { Router } from '@angular/router';
