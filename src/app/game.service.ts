@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Game } from './games/game';
-import { GAMES } from './games/games-mock';
+import { Game } from './component/games/games/game';
+import { GAMES } from './component/games/games/games-mock';
 import { Observable, of, throwError } from 'rxjs'
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http'

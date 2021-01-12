@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MessageComponent } from './message/message.component';
-import { GameCardComponent } from './game-card/game-card.component';
+import { GameCardComponent } from './component/games/game-card/game-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule, MatToolbarRow, MatToolbar, MatToolbarModule, MatSidenavModule, MatListModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
