@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 import { GamesComponent } from './component/games/games/games.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GameDetailsComponent } from './component/games/game-details/game-details.component';
-import { MessageComponent } from './message/message.component';
 import { AppRoutingModule } from './app-routing.module'
 import { HttpClientModule } from '@angular/common/http'
 import { DashboardComponent } from './component/dashboard/dashboard.component';
@@ -17,6 +16,7 @@ import {FlexLayoutModule } from '@angular/flex-layout';
 import { SocialLoginComponent } from './social-login/social-login.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { OAuth2RedirectHandlerComponent } from './authentication/oAuth2RedirectHandler/oauth2-redirect-handler/oauth2-redirect-handler.component';
+import { MessageComponent } from './common/component/message/message.component';
 
 @NgModule({
   declarations: [

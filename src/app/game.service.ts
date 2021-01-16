@@ -6,6 +6,7 @@ import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { catchError, map, tap, retry } from 'rxjs/operators'
 import { environment } from 'src/environments/environment';
+import { GlobalService } from './common/services/global.service';
 const BASE_API_URL = environment.ENDPOINT_ROOT_URL
 @Injectable({
   providedIn: 'root'
@@ -13,84 +14,26 @@ const BASE_API_URL = environment.ENDPOINT_ROOT_URL
 export class GameService {
 
   private gameUrl = BASE_API_URL + '/games';
+  constructor(private globalService: GlobalService) {}
 
-  private httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
-    withCredentials: true
-  };
-  constructor(
-    private messageService: MessageService,
-    private http: HttpClient,
-  ) {
-  }
   getGames(): Observable<Game[]> {
-    return this.http.get<Game[]>(this.gameUrl + '/getall',{withCredentials:true}).pipe(
-      tap(_ => this.log('fetched games')),
-      retry(1),
-      catchError(this.handleErrors)
-    );
+    return this.globalService.getAllObjects(this.gameUrl);
   }
   getGameById(id: number): Observable<Game> {
-    return this.http.get<Game>(this.gameUrl + "/" + id).pipe(
-      tap(_ => this.log(`GameService: fetched game ${id}`)),
-      catchError(this.handleError<Game>(`getGameById id=${id}`))
-    );
+    return this.globalService.getObjectById(this.gameUrl, id);
   }
-
   updateGame(game: Game): Observable<any> {
-    return this.http.patch<Game>(this.gameUrl + "/", game, {withCredentials:true,headers:new HttpHeaders({ 'Content-Type': 'application/json' })}).pipe(
-      tap(_ => this.log(`Updated Game ${game.id}`)),
-      catchError(this.handleError<any>('updateGame'))
-    );
+    return this.globalService.updateObject(this.gameUrl, game);
   }
-
   addGame(game: Game): Observable<Game> {
-    return this.http.post(this.gameUrl + "/", game, this.httpOptions).pipe(
-      tap((newGame: Game) => this.log(`Posted game ${newGame.id}`)),
-      catchError(this.handleError<Game>('addGame'))
-    );
+    return this.globalService.addObject(this.gameUrl, game);
   }
-
   deleteGame(game: Game): Observable<any> {
-    const url = this.gameUrl + "/" + game.id;
-    return this.http.delete<Game>(url, this.httpOptions).pipe(
-      tap(_ => this.log(`deleted game ${game.id}`)),
-      catchError(this.handleError<Game>('deleteGame'))
-    )
+    return this.globalService.deleteObject(this.gameUrl, game);
   }
 
   searchGames(term: string): Observable<Game[]> {
-    if (!term.trim()) {
-      return of([]);
-    }
-    return this.http.get<Game[]>(`${this.gameUrl}?term=${term}`).pipe(
-      tap(_ => this.log(`found games matching "${term}"`)),
-      catchError(this.handleError<Game[]>('searchGames', []))
-    );
+    return this.globalService.searchObjectsByTerm(this.gameUrl, term);
   }
 
-  private log(message: string) {
-    this.messageService.add(message);
-  }
-
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(error);
-      this.log(`${operation} failed: ${error.message}`);
-      return of(result as T);
-    }
-  };
-
-  handleErrors(error) {
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      // client-side error
-      errorMessage = `Error: ${error.error.message}`;
-    } else {
-      // server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    console.log(errorMessage);
-    return throwError(errorMessage);
-  }
 }
