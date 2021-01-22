@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { catchError, map, tap, retry } from 'rxjs/operators'
 import { environment } from 'src/environments/environment';
 import { GlobalService } from './common/services/global.service';
-const BASE_API_URL = environment.ENDPOINT_ROOT_URL
+const BASE_API_URL = environment.ENDPOINT_ROOT_URL;
 @Injectable({
   providedIn: 'root'
 })

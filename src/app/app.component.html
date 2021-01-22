@@ -1,6 +1,6 @@
+<app-home-slider></app-home-slider>
 <div>
-  <app-social-login></app-social-login>
-    <mat-toolbar >
+      <mat-toolbar  class="top-menu">
       <mat-toolbar-row>
         <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
           <mat-icon>menu</mat-icon>
@@ -9,6 +9,10 @@
         <span class="menu-spacer"></span>
         <div fxShow="true" fxHide.lt-md>
           <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+          <a mat-button routerLink="/clothes">Home</a>
+          <a mat-button routerLink="/games">Men</a>
+          <a mat-button routerLink="/games">Kids</a>
+          <a mat-button routerLink="/games">Women</a>
           <a mat-button routerLink="/games">Games</a> 
           <a mat-button routerLink="/dashboard">Dashboard</a>
           <a mat-button routerLink="/trombinogame" id="trombinogame">Trombinogame</a>
@@ -16,16 +20,15 @@
       </mat-toolbar-row>
     </mat-toolbar>
   
-    <mat-sidenav-container fxFlexFill>
-      <mat-sidenav #sidenav>
+    <mat-sidenav-container fxFlexFill >
+      <mat-sidenav #sidenav class="side-menu">
         <mat-nav-list>
           <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
-          <a href="#" mat-list-item>Menu Item 1</a>
-          <a href="#" mat-list-item>Menu Item 2</a>
-          <a href="#" mat-list-item>Menu Item 3</a>
-          <a href="#" mat-list-item>Menu Item 4</a>
-          <a href="#" mat-list-item>Menu Item 5</a>
-          <a href="#"mat-list-item>Menu Item 6</a>
+          <a href="#" mat-list-item routerLink="/clothes" ><span class="side-menu-item">Home</span></a>
+          <a href="#" mat-list-item routerLink="/games"><span class="side-menu-item">Men</span></a>
+          <a href="#" mat-list-item routerLink="/games"><span class="side-menu-item">Women</span></a>
+          <a href="#" mat-list-item routerLink="/games"><span class="side-menu-item">Kids</span></a>
+          <a href="#" mat-list-item routerLink="/dashboard"><span class="side-menu-item">Dashboard</span></a>
         </mat-nav-list>
 
       </mat-sidenav>

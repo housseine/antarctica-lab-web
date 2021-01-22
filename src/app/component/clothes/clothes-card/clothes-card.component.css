@@ -1,0 +1,9 @@
+.example-card {
+    max-width: 200px;
+    display: inline-block;
+  }
+
+  .example-card a img{
+      
+      height: 400px;
+  }

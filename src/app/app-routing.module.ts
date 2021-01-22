@@ -8,10 +8,12 @@ import { OAuth2RedirectHandlerComponent } from './authentication/oAuth2RedirectH
 import { LoginRequest } from './authentication/login/loginRequest';
 import { AuthGuardService } from './common/services/auth-guard.service';
 import { LoginComponent } from './authentication/login/login.component';
+import { ClothesCardComponent } from './component/clothes/clothes-card/clothes-card.component';
 
 const routes:Routes=[
   {path:'games',component:GamesComponent},
   {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuardService]},
+  {path:'clothes',component:ClothesCardComponent},
   {path:'details/:id',component:GameDetailsComponent},
   {path:'trombinogame',component:GameCardComponent},
   {path:'oauth2/redirect',component:OAuth2RedirectHandlerComponent},

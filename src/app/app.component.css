@@ -17,5 +17,22 @@ h1 {
   * {
     font-family: Arial, Helvetica, sans-serif;
   } 
-
- 
+  .top-menu{
+    position: fixed;
+    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1000;
+    top: 0px;
+  }
+.side-menu{
+  position: fixed;
+  top: 7%;
+  width: 100%;
+  background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+}
+.side-menu-item{
+  text-align: center;
+  width: 100%;
+  height: inherit;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.13) 0%, rgba(255, 255, 255, 0) 100%);
+  
+}

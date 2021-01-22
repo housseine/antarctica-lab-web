@@ -18,8 +18,9 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 body {
-    margin: 2em;
-    background-image:url("assets/img/general/bg-antarctica2.jpg") ;
+    
+    /*background-image:url("assets/img/general/bg-antarctica2.jpg") ;*/
+    background-color: white;
 
   }
   *{

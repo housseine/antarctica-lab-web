@@ -17,6 +17,8 @@ import { SocialLoginComponent } from './social-login/social-login.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { OAuth2RedirectHandlerComponent } from './authentication/oAuth2RedirectHandler/oauth2-redirect-handler/oauth2-redirect-handler.component';
 import { MessageComponent } from './common/component/message/message.component';
+import { ClothesCardComponent } from './component/clothes/clothes-card/clothes-card.component';
+import { HomeSliderComponent } from './common/component/home-slider/home-slider.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { MessageComponent } from './common/component/message/message.component';
     GameCardComponent,
     SocialLoginComponent,
     LoginComponent,
-    OAuth2RedirectHandlerComponent
+    OAuth2RedirectHandlerComponent,
+    ClothesCardComponent,
+    HomeSliderComponent
   ],
   imports: [
     BrowserModule,
