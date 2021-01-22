@@ -9,6 +9,7 @@ import { MatIconModule, MatToolbarRow, MatToolbar, MatToolbarModule, MatSidenavM
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {SocialLoginComponent} from './social-login/social-login.component'
 import { MessageComponent } from './common/component/message/message.component';
+import { HomeSliderComponent } from './common/component/home-slider/home-slider.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -27,7 +28,7 @@ describe('AppComponent', () => {
         
       ],
       declarations: [
-        AppComponent,MessageComponent,GameCardComponent,SocialLoginComponent
+        AppComponent,MessageComponent,GameCardComponent,SocialLoginComponent,HomeSliderComponent
       ],
     }).compileComponents();
   }));

@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatCardContent, MatCardModule } from '@angular/material';
 
 import { ClothesCardComponent } from './clothes-card.component';
 
@@ -8,6 +10,10 @@ describe('ClothesCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports:[
+        MatCardModule,
+        HttpClientModule
+      ],
       declarations: [ ClothesCardComponent ]
     })
     .compileComponents();

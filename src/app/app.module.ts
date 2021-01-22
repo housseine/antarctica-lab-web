@@ -57,6 +57,7 @@ import { HomeSliderComponent } from './common/component/home-slider/home-slider.
     HttpClientModule,
     ReactiveFormsModule,
     MatInputModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
