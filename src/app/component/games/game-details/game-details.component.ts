@@ -14,7 +14,7 @@ export class GameDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private gameService: GameService,
-    private lcoaltion: Location
+    private location: Location
   ) { }
 
   ngOnInit() {
@@ -28,7 +28,7 @@ export class GameDetailsComponent implements OnInit {
   }
 
   goBack(): void {
-    this.lcoaltion.back();
+    this.location.back();
   }
   save():void{
     this.gameService.updateGame(this.game).subscribe(()=>this.goBack());

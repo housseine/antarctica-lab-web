@@ -32,7 +32,6 @@ h1 {
 .side-menu-item{
   text-align: center;
   width: 100%;
-  height: inherit;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.13) 0%, rgba(255, 255, 255, 0) 100%);
+ border-bottom: 1px solid rgb(71, 203, 255);
   
 }

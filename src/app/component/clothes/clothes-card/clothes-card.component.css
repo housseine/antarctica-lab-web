@@ -1,9 +1,20 @@
-.example-card {
-    max-width: 200px;
-    display: inline-block;
-  }
+.article {
+    width: 25%;
+    display: list-item;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
 
-  .example-card a img{
-      
-      height: 400px;
-  }
+@media only screen and (max-width: 959px) {
+    .article {
+        width: 50%;
+        display: list-item;
+        float: left;
+        overflow: hidden;
+        position: relative;
+        margin: 0px;
+        padding: 0px;
+        border: none;
+    }
+}

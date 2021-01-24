@@ -1,4 +1,3 @@
-<app-home-slider></app-home-slider>
 <div>
       <mat-toolbar  class="top-menu">
       <mat-toolbar-row>
@@ -23,12 +22,14 @@
     <mat-sidenav-container fxFlexFill >
       <mat-sidenav #sidenav class="side-menu">
         <mat-nav-list>
-          <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
-          <a href="#" mat-list-item routerLink="/clothes" ><span class="side-menu-item">Home</span></a>
-          <a href="#" mat-list-item routerLink="/games"><span class="side-menu-item">Men</span></a>
-          <a href="#" mat-list-item routerLink="/games"><span class="side-menu-item">Women</span></a>
-          <a href="#" mat-list-item routerLink="/games"><span class="side-menu-item">Kids</span></a>
-          <a href="#" mat-list-item routerLink="/dashboard"><span class="side-menu-item">Dashboard</span></a>
+          <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+            <mat-icon>close</mat-icon>
+          </button>
+          <a (click)="sidenav.toggle()" href="#" mat-list-item routerLink="/clothes" ><span class="side-menu-item">Home</span></a>
+          <a (click)="sidenav.toggle()" href="#" mat-list-item routerLink="/games"><span class="side-menu-item">Men</span></a>
+          <a (click)="sidenav.toggle()" href="#" mat-list-item routerLink="/games"><span class="side-menu-item">Women</span></a>
+          <a (click)="sidenav.toggle()" href="#" mat-list-item routerLink="/games"><span class="side-menu-item">Kids</span></a>
+          <a (click)="sidenav.toggle()" href="#" mat-list-item routerLink="/dashboard"><span class="side-menu-item">Dashboard</span></a>
         </mat-nav-list>
 
       </mat-sidenav>

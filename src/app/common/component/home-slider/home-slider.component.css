@@ -56,15 +56,16 @@ body {
 
 .buttons button#next {
   position: absolute;
-  top: 40%;
+  top: 20%;
   right: 15px;
 }
 
 .buttons button#prev {
   position: absolute;
-  top: 40%;
+  top: 20%;
   left: 15px;
 }
+
 
 .buttons button {
   border: 2px solid #fff;
@@ -72,7 +73,7 @@ body {
   color: #fff;
   cursor: pointer;
   padding: 13px 15px;
-  border-radius: 50%;
+  border-radius: 10px;
   outline: none;
 }
 

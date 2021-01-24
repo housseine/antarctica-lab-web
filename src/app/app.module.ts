@@ -19,6 +19,8 @@ import { OAuth2RedirectHandlerComponent } from './authentication/oAuth2RedirectH
 import { MessageComponent } from './common/component/message/message.component';
 import { ClothesCardComponent } from './component/clothes/clothes-card/clothes-card.component';
 import { HomeSliderComponent } from './common/component/home-slider/home-slider.component';
+import { ClothesDetailsComponent } from './component/clothes/clothes-details/clothes-details.component';
+import { zoomer } from './common/directives/zoomer';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { HomeSliderComponent } from './common/component/home-slider/home-slider.
     LoginComponent,
     OAuth2RedirectHandlerComponent,
     ClothesCardComponent,
-    HomeSliderComponent
+    HomeSliderComponent,
+    ClothesDetailsComponent,
+    zoomer
   ],
   imports: [
     BrowserModule,

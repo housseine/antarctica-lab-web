@@ -18,7 +18,7 @@ const routes:Routes=[
   {path:'trombinogame',component:GameCardComponent},
   {path:'oauth2/redirect',component:OAuth2RedirectHandlerComponent},
   {path:'login',component:LoginComponent},
-  {path:'',redirectTo:'/dashboard',pathMatch:'full'},
+  {path:'',redirectTo:'/clothes',pathMatch:'full'},
 
 ];
 

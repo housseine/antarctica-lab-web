@@ -1,4 +1,3 @@
-window.alert("works");
 const slides = document.querySelectorAll('.slide');
 const next = document.querySelector('#next');
 const prev = document.querySelector('#prev');
