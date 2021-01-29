@@ -5,17 +5,10 @@ export class zoomer {
 
     @Input('img-id') imgID: string;
     @Input('result-id') resultID: string;
-   
-
-
 
     ngAfterViewInit() {
         this.zoom(document.getElementById(this.imgID), document.getElementById(this.resultID));
-
-
     }
-
-
 
     zoom(img, result) {
         var lens, cx, cy;

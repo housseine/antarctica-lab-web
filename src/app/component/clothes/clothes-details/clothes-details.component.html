@@ -1,4 +1,4 @@
-<div zoom img-id="myimage" result-id="myresult">
+<!-- <div zoom img-id="myimage" result-id="myresult">
   <h1>Image Zoom</h1>
 
   <p>Mouse over the image:</p>
@@ -14,4 +14,42 @@
   <p>Make sure both the image and the result have IDs. These IDs are used when a javaScript initiates the zoom effect.
   </p>
 
+</div> -->
+
+<div *ngIf="clothe">
+  <h2>{{clothe.label|uppercase}} Details</h2>
+  <div><span>label: </span>{{clothe.label}}</div>
+  <div><span>label: </span>{{clothe.description}}</div>
+  <div><span>categorie: </span>{{clothe.categorie}}</div>
+  
+</div>
+<button (click)="goBack()">Go back</button>
+
+<div class="container">
+  <div class="box" zoom img-id="myimage" result-id="myresult">
+    <div class="product-img">
+      <img id="myimage" src="http://images.ifun.de/wp-content/uploads/2015/09/fire-tablet-500.jpg" alt="" class="product-image" />
+      <div id="myresult" class="img-zoom-result"></div>
+    </div>
+    <div class="product-info">
+      <button class="buy-button">ADD TO CART</button>
+      <h1 class="product-title">Fire Tablet</h1>
+      <p class="price">$49.99</p>
+      <p class="description">Powerful tablet at an incredible price.</p>
+      Color:
+      <select class="color">
+        <option>Black</option>
+        <option>Blue</option>
+        <option>Tangerine</option>
+        <option>Magenta</option>
+      </select> Quantity:
+      <select class="qty">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+  </div>
 </div>

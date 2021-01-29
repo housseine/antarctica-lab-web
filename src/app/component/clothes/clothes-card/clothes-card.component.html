@@ -1,14 +1,13 @@
 <app-home-slider></app-home-slider>
 <h2>New Collection</h2>
 <mat-card class="article" *ngFor="let clothe of clothes">
-    <a href="https://www.qries.com/">
+    <a routerLink="/clothes/{{clothe.id}}">
         <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    </a>
 
+    </a>
     <mat-card-content>
         <p>
            <span>{{clothe.description}}</span>
         </p>
     </mat-card-content>
-
 </mat-card>
