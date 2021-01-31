@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatCardContent, MatCardModule, MatIconModule } from '@angular/material';
+import { MatCardModule, MatIconModule } from '@angular/material';
+import { RouterModule } from '@angular/router';
 import { HomeSliderComponent } from 'src/app/common/component/home-slider/home-slider.component';
 
 import { ClothesCardComponent } from './clothes-card.component';
@@ -14,7 +15,8 @@ describe('ClothesCardComponent', () => {
       imports:[
         MatCardModule,
         MatIconModule,
-        HttpClientModule
+        HttpClientModule,
+        RouterModule
       ],
       declarations: [ ClothesCardComponent,HomeSliderComponent ]
     })

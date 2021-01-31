@@ -20,10 +20,15 @@ export class HomeSliderComponent implements OnInit {
     const auto = true; // Auto scroll
     const intervalTime = 4000;
     let slideInterval;
-
+    if(slides==undefined||next==undefined||prev==undefined){
+      return;
+    }
     const nextSlide = () => {
       // Get current class
       const current = document.querySelector('.current');
+      if (current==null){
+        return;
+      }
       // Remove current class
       current.classList.remove('current');
       // Check for next slide
