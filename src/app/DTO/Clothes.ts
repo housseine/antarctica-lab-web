@@ -6,5 +6,4 @@ export class Clothes {
     description: string;
     date: Date;
     categories: Set<Categorie>;
-
 }

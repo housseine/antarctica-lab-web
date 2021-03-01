@@ -2,32 +2,34 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { GlobalService } from '../common/services/global.service';
-import { Product } from '../DTO/Product';
+import { ProductColorSizes } from '../DTO/ProductColorSizes';
 const BASE_API_URL = environment.ENDPOINT_ROOT_URL;
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
-
-  private productUrl = BASE_API_URL + '/public/clothes';
+export class ProductSpecService {
+  private productUrl = BASE_API_URL + '/public/clothes-spec';
   constructor(private globalService: GlobalService) { }
 
-  getProduct(): Observable<Product[]> {
+  getProductSpecs(): Observable<ProductColorSizes[]> {
     return this.globalService.getAllObjects(this.productUrl+"/all");
   }
-  getProductById(id: number): Observable<Product> {
+  getProductSpecById(id: number): Observable<ProductColorSizes> {
     return this.globalService.getObjectById(this.productUrl, id);
   }
-  updateProduct(clothes: Product): Observable<any> {
+  updateProductSpec(clothes: ProductColorSizes): Observable<any> {
     return this.globalService.updateObject(this.productUrl, clothes);
   }
-  addProduct(clothes: Product): Observable<Product> {
+  addProductSpec(clothes: ProductColorSizes): Observable<ProductColorSizes> {
     return this.globalService.addObject(this.productUrl, clothes);
   }
-  deleteProduct(clothes: Product): Observable<any> {
+  deleteProductSpec(clothes: ProductColorSizes): Observable<any> {
     return this.globalService.deleteObject(this.productUrl, clothes);
   }
-  searchProduct(term: string): Observable<Product[]> {
+  searchProductSpec(term: string): Observable<ProductColorSizes[]> {
     return this.globalService.searchObjectsByTerm(this.productUrl, term);
+  }
+  getProductSpecByProductId(id: number):Observable<ProductColorSizes[]>{
+    return this.globalService.getAllObjects(this.productUrl+"/product",id)
   }
 }

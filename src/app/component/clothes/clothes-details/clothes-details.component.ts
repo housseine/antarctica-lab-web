@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Clothes } from 'src/app/DTO/Clothes';
 import { ClothesService } from 'src/app/services/clothes.service';
 import { Location } from '@angular/common';
+import { ProductSpecService } from 'src/app/services/product.spec.service';
+import { ProductColorSizes } from 'src/app/DTO/ProductColorSizes';
 
 @Component({
   selector: 'app-clothes-details',
@@ -10,10 +12,10 @@ import { Location } from '@angular/common';
   styleUrls: ['./clothes-details.component.css']
 })
 export class ClothesDetailsComponent implements OnInit {
- clothe: Clothes;
+ clothes: ProductColorSizes[];
   constructor(
     private route: ActivatedRoute,
-    private clothesService: ClothesService,
+    private clothesService: ProductSpecService,
     private location: Location
   ) { }
 
@@ -22,8 +24,7 @@ export class ClothesDetailsComponent implements OnInit {
   }
   getClothesById() {
     const id = +this.route.snapshot.paramMap.get('id');
-    console.log("id: "+id)
-    this.clothesService.getClothesById(id).subscribe(clothe => this.clothe = clothe);
+    this.clothesService.getProductSpecByProductId(id).subscribe(clothes => this.clothes = clothes);
   }
   goBack(): void {
     this.location.back();

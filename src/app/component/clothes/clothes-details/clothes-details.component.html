@@ -16,45 +16,48 @@
 
 </div> -->
 
-<div *ngIf="clothe">
-  <h2>{{clothe.label|uppercase}} Details</h2>
-  <div><span>label: </span>{{clothe.label}}</div>
-  <div><span>label: </span>{{clothe.description}}</div>
-  <div><span>categorie: </span>{{clothe.categories}}</div>
+<!-- <div *ngIf="clothes">
+  <h2>{{clothes[0].product.label|uppercase}} Details</h2>
+  <div><span>label: </span>{{clothes[0].product.label}}</div>
+  <div><span>description: </span>{{clothes[0].product.description}}</div>
+  <div *ngFor="let cat of clothes[0].product.categories"><span>categorie: </span>{{cat.label}}</div>
 
-</div>
-<button (click)="goBack()">Go back</button>
+</div> -->
 
-<div class="container" *ngIf="clothe">
+
+<div class="container" *ngIf="clothes">
   <div class="box" zoom img-id="myimage" result-id="myresult">
     <div class="img-zoom-container">
       <div class="product-image-container">
         <div class="product-image-content"> <img id="myimage"
             src="https://public-619e3.firebaseapp.com/Product-Gallery/products/normal/product-01_view-01.jpg" alt="Girl"
             class="product-image">
-      </div>
+        </div>
       </div>
       <div id="myresult" class="img-zoom-result"></div>
     </div>
     <div class="product-info">
-      <button class="buy-button">ADD TO CART</button>
-      <h1 class="product-title">{{clothe.label|uppercase}}</h1>
-      <p class="price">$49.99</p>
-      <p class="description">Powerful tablet at an incredible price.</p>
+      <a class="buy-button" [attr.href]="'//'+clothes[0].product.link">BUY PRODUCT</a>
+      <h1 class="product-title">{{clothes[0].product.label|uppercase}}</h1>
+
+      <div class="article" *ngFor="let price of clothes[0].prices">
+        <p class="price" *ngIf="price.currency.label=='mad'">{{price.value}} {{price.currency.label|uppercase}}</p>
+      </div>
+      <p class="description">Description{{clothes[0].product.description}}</p>
+      <div class="categories" *ngFor="let categorie of clothes[0].product.categories">
+        <p> Categories: {{categorie.label}}</p>
+      </div>
+      <!-- <p> Majority: {{clothe.product.majority}}</p>
+      <p *ngIf="clothe.product.gender=='w'"> Gender: Women</p>
+      <p *ngIf="clothe.product.gender=='m'"> Gender: Men</p>
+      <p *ngIf="clothe.product.gender=='u'"> Gender: Unisex</p> -->
       Color:
       <select class="color">
-        <option>Black</option>
-        <option>Blue</option>
-        <option>Tangerine</option>
-        <option>Magenta</option>
-      </select> Quantity:
-      <select class="qty">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+        <option *ngFor="let color of clothes">
+          <div style="background-color: 'color.color.value';">{{color.color.value}}</div>
+        </option>
       </select>
     </div>
   </div>
 </div>
+<button (click)="goBack()">Go back</button>

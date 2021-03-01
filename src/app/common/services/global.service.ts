@@ -26,8 +26,9 @@ export class GlobalService {
     );
   }
 
-  public getAllObjects<T>(url: string): Observable<T[]> {
-    return this.http.get<T[]>(url + '/all', this.httpOptions).pipe(
+  public getAllObjects<T>(url: string,param?: any): Observable<T[]> {
+    if(!param){ param=""}
+    return this.http.get<T[]>(url + '/'+param, this.httpOptions).pipe(
       tap(_ => this.log('fetched all')),
       retry(1),
       catchError(this.handleErrors)
